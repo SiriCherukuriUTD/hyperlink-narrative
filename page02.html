@@ -24,6 +24,28 @@
 		object-fit: cover;
 		z-index: -1;
 		}
+		.line1 {
+		opacity: 0;
+		animation: fadeIn 2s forwards;
+		animation-delay: 0.5s; 
+		}
+		@keyframes fadeIn {to {opacity: 1;}}
+		.glow {
+		text-shadow:
+		0 0 5px #ffffff,
+		0 0 20px #6ccfff;
+		}
+		.line2 {
+		overflow: hidden;
+		white-space: nowrap;
+		border-right: 3px solid white;
+		width: 0;
+		animation:
+		typing 4s steps(40,end) 1s forwards,
+		blink .8s infinite;
+		}
+		@keyframes typing {from { width: 0 } to { width: 100% }}
+		@keyframes blink {50% { border-color: transparent }}
 		.overlay h1 {
 			font-family: "Georgia", serif; 
 			font-size: 3rem;
@@ -42,6 +64,25 @@
 		justify-content: center; 
 		gap: 50px; 
 		}
+		.btn-container {
+		opacity: 0;
+		border: 2px solid transparent;
+		transition: all 0.3s ease;
+		animation: fadeIn 1s forwards;
+		animation-delay: 6s;
+		}
+		.btn-danger:hover {
+		box-shadow: 0 0 15px #dc3545, 0 0 45px #dc3545;
+		transform: scale(1.05);
+		}
+		.btn-warning:hover {
+		box-shadow: 0 0 15px #ffc107, 0 0 45px #ffc107;
+		transform: scale(1.05);
+		}
+		.btn-primary:hover {
+		box-shadow: 0 0 15px #0d6efd, 0 0 45px #0d6efd;
+		transform: scale(1.05);
+		}
 	</style>
 </head>
 <body>
@@ -49,16 +90,15 @@
 	<img src="assets/img/time_machine.png" class="background" alt="Mysterious Box">
 
 	<div class="overlay container">
-		<h1>You found a time machine!</h1>
-		<h4>Want to test it out? Be careful, messing with time never ends well...</h4>
+		<h1 class="line1 glow">You found a time machine!</h1>
+		<h4 class="line2">Want to test it? Be careful, messing with time never ends well...</h4>
 	<div class="btn-container">
     	<a href="page04.html" class="btn btn-danger btn-md">Meet the dinosaurs</a>
         <a href="page05.html" class="btn btn-warning btn-md">Visit ancient Egypt</a>
-        <a href="page06.html" class="btn btn-primary btn-md">See the future</a>
+        <a href="page06.html" class="btn btn-primary btn-md">To the future</a>
 	</div>
 	</div>
 
-	<script src="./assets/js/main.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
