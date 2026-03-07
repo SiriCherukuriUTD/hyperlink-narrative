@@ -2,34 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Time Machine Gone</title>
+    <title>World Restored</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
     <style>
-    html, body {
-    height: 100%;
-    margin: 0;
+    body, html { 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
+    background-color: #6482d8; 
     }
-
+    .intro {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background-image: url("assets/img/explosion.png"); 
+    background-size: cover; 
+    background-position: center; z-index: 10;
+    animation: fadeOut 1s ease forwards; 
+    animation-delay: .5s; 
+    } 
+    @keyframes fadeOut {to { opacity: 0; visibility: hidden; }}
     .center {
     text-align: center;
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     }
-
-    .center img {
-    width: 300px;
+    .background {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	max-height: 58vh;
+	object-fit: contain;
+	}
+    .line1 {
+	opacity: 0;
+	animation: fadeIn 1s forwards;
+	animation-delay:1s; 
+	}
+	@keyframes fadeIn {to {opacity: 1;}}
+    .line2 {
+	opacity: 0;
+	animation: fadeIn 1s forwards;
+	animation-delay: 2.5s; 
+	}
+	@keyframes fadeIn {to {opacity: 1;}}
+    .line3 {
+	overflow: hidden;
+	white-space: nowrap;
+	border-right: 3px solid white;
+	width: 0;
+	animation: typing 2.5s steps(40,end) 1s forwards,
+	blink .8s infinite;
+    animation-delay: 3.5s;
+	}
+    @keyframes typing {from { width: 0 } to { width: 100% }}
+	@keyframes blink {50% { border-color: transparent }}
+    .center { 
+    text-align: center; 
+    position: absolute; 
+    top: 22%; 
+    left: 50%; 
+    transform: 
+    translate(-50%, -50%); 
     }
+    .center h1 {
+    color: #ffffff;
+	font-family: "Georgia", serif;
+	font-size: 3rem;
+	}
+    .glow {
+	text-shadow:
+	0 0 5px #ffffff,
+	0 0 20px #08ff10;
+	}
+    .center h2 {
+    color: white;
+	font-family: "Orbitron", serif;
+	}
+	.center h4 {
+    color: #dc3545;
+	font-family: "Orbitron", serif;
+	}
+    .btn-container {
+    font-family: "Georgia", serif;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 20;
+    }
+	.btn-light {
+    border: 2px solid white;
+	background-color: white;
+	color: black;
+	box-shadow: 0 0 8px rgb(255, 255, 255);
+	transition: all 0.3s ease;
+	}
+	.btn-light:hover {
+	box-shadow: 0 0 15px white, 0 0 45px yellow;
+    transform: scale(1.05);
+	}
+    .btn-light {
+	opacity: 0;
+	animation: fadeIn 1s forwards;
+	animation-delay: 6.5s; 
+	}
+	@keyframes fadeIn {to {opacity: 1;}}
     </style>
 </head>
 <body>
 
+    <div class="intro"></div>
+    <img src="assets/img/earth.png" class="background" alt="Earth">
+
     <div class="center">
-    <h1>The time machine is gone, original timelines are restored.</h1>
-    <h2>Have you learned your lesson? Don't mess with time, or time messes with you!</h2>
-    <img src="assets/img/earth.png" alt="Earth">
+        <h1 class="line1 glow">The time machine is gone, original timelines are restored.</h1>
+        <h2 class="line2">Have you learned your lesson?</h2>
+        <h4 class="line3">Don't mess with time, or time messes with you!</h4>
     </div>
 
+    <div class="btn-container">
+        <a href="index.html" class="btn btn-light btn-lg">Return to your lab.</a>
+    </div>
+    
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
