@@ -16,14 +16,38 @@
 		padding: 0;
 		height: 100%;
 		color: black;
+		background: white
 		}
-		img.background {
+		.background {
 		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -1;
+		height: auto;
+		max-height: 74vh;
 		}
+		.line1 {
+		opacity: 0;
+		animation: fadeIn 2s forwards;
+		animation-delay: 0.5s; 
+		}
+		@keyframes fadeIn {to {opacity: 1;}}
+		.glow {
+		text-shadow:
+		0 0 5px #ffffff,
+		0 0 20px #cf1010;
+		}
+		.line2 {
+		overflow: hidden;
+		white-space: nowrap;
+		border-right: 3px solid white;
+		width: 0;
+		animation:
+		typing 2.5s steps(40,end) 1s forwards,
+		blink .8s infinite;
+		}
+		@keyframes typing {from { width: 0 } to { width: 100% }}
+		@keyframes blink {50% { border-color: transparent }}
 		.overlay h1 {
 			font-family: "Georgia", serif; 
 			font-size: 3rem;
@@ -31,29 +55,41 @@
 		.overlay h4 {
 			font-family: "Orbitron", serif;
 		}
-		.overlay .btn-container {
+		.btn-container {
 		font-family: "orbitron", serif;
 		position: absolute;
-		bottom: 35px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center; 
-		gap: 50px; 
+		gap: 20px; 
+		opacity: 0;
+		border: 2px solid transparent;
+		transition: all 0.3s ease;
+		animation: fadeIn 1s forwards;
+		animation-delay: 3s;
+		}
+		.btn-danger:hover {
+		box-shadow: 0 0 15px #dc3545, 0 0 45px #dc3545;
+		transform: scale(1.05);
+		}
+		.btn-warning:hover {
+		box-shadow: 0 0 15px #ffc107, 0 0 45px #ffc107;
+		transform: scale(1.05);
 		}
 	</style>
 </head>
 <body>
 
-	<img src="assets/img/tombstone.png" class="background" alt="Grave">
+		<img src="assets/img/tombstone.png" class="background" alt="Grave">
 
-	<div class="overlay container">
-		<h1>Uh oh you died...</h1>
-		<h4>You were warned, messing with time is dangerous. End this now...or try again </h4>
+	<div class="overlay">
+		<h1 class="line1 glow">Uh oh you died!</h1>
+		<h4 class="line2">You were warned, playing with time is dangerous. End this now...or don't. </h4>
 	<div class="btn-container">
-    	<a href="page02.html" class="btn btn-warning btn-md">Try again</a>
-        <a href="page13.html" class="btn btn-danger btn-md">Destroy the machine</a>
+    	<a href="page02.html" class="btn btn-warning btn-md">No way! I want to try again.</a>
+        <a href="page13.html" class="btn btn-danger btn-md">I'm done messing with time! Destroy the machine.</a>
 	</div>
 	</div>
 
