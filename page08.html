@@ -16,13 +16,20 @@
 		padding: 0;
 		height: 100%;
 		color: black;
-		}
-		img.background {
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		background-color: #5f5850;
 		z-index: -1;
+		}
+		.background {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		max-height: 100vh;
+		}
+		.overlay {
+		position: relative;
+		z-index: 1;
 		}
 		.overlay h1 {
 			font-family: "Georgia", serif; 
@@ -31,16 +38,24 @@
 		.overlay h4 {
 			font-family: "Orbitron", serif;
 		}
-		.overlay .btn-container {
+		.btn-container {
 		font-family: "orbitron", serif;
-		position: absolute;
-		bottom: 35px;
+		position: fixed;
+		bottom: 20px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center; 
-		gap: 50px; 
+		justify-content: center;
+		gap: 50px;
+		z-index: 2;
+		}
+		.btn-danger {
+		box-shadow: 0 0 10px #dc3545;
+		transition: all 0.3s ease;
+		}
+		.btn-danger:hover {
+		box-shadow: 0 0 15px #dc3545, 0 0 40px #dc3545;
+		transform: scale(1.08);
 		}
 	</style>
 </head>
@@ -50,9 +65,9 @@
 
 	<div class="overlay container">
 		<h1>Bad choice...</h1>
-		<h4>Dinosaurs think you're food! They chomp before you can run.</h4>
+		<h4>Dinosaurs think you're new food! They chomp down before you can run.</h4>
 	<div class="btn-container">
-    	<a href="page03.html" class="btn btn-light btn-md">Meet your fate</a>
+    	<a href="page03.html" class="btn btn-danger btn-lg">Meet your fate</a>
 	</div>
 	</div>
 

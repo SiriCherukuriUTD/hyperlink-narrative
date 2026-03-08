@@ -16,13 +16,15 @@
 		padding: 0;
 		height: 100%;
 		color: white;
+		background-color: #97a4d6;
 		}
-		img.background {
+		.background {
 		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -1;
+		height: auto;
+		max-height: 85vh;
 		}
 		.overlay h1 {
 			font-family: "Georgia", serif; 
@@ -42,6 +44,14 @@
 		justify-content: center; 
 		gap: 50px; 
 		}
+		.btn-success {
+		box-shadow: 0 0 10px #198754;
+		transition: all 0.3s ease;
+		}
+		.btn-success:hover {
+		box-shadow: 0 0 15px #198754, 0 0 45px #198754;
+		transform: scale(1.08);
+		}
 	</style>
 </head>
 <body>
@@ -50,9 +60,9 @@
 
 	<div class="overlay container">
 		<h1>You're 65 million years in the past...</h1>
-		<h4>Welcome to the dinosaur age! What do you want to do?</h4>
+		<h4>Welcome to the dinosaur age! What would you like to do?</h4>
 	<div class="btn-container">
-    	<a href="page07.html" class="btn btn-success btn-md">Take a picture for proof</a>
+    	<a href="page07.html" class="btn btn-success btn-md">Pose for a picture</a>
         <a href="page08.html" class="btn btn-success btn-md">Pet a dinosaur</a>
 	</div>
 	</div>
