@@ -16,13 +16,19 @@
 		padding: 0;
 		height: 100%;
 		color: white;
+		background-color: #4b321a;
 		}
-		img.background {
+		.background {
 		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -1;
+		height: auto;
+		max-height: 85vh;
+		}
+		.overlay {
+		position: relative;
+		z-index: 1;
 		}
 		.overlay h1 {
 			font-family: "Georgia", serif; 
@@ -31,16 +37,24 @@
 		.overlay h4 {
 			font-family: "Orbitron", serif;
 		}
-		.overlay .btn-container {
+		.btn-container {
 		font-family: "orbitron", serif;
-		position: absolute;
-		bottom: 35px;
+		position: fixed;
+		bottom: 30px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center; 
-		gap: 50px; 
+		justify-content: center;
+		gap: 50px;
+		z-index: 2;
+		}
+		.btn-danger {
+		box-shadow: 0 0 10px #dc3545;
+		transition: all 0.3s ease;
+		}
+		.btn-danger:hover {
+		box-shadow: 0 0 15px #dc3545, 0 0 40px #dc3545;
+		transform: scale(1.08);
 		}
 	</style>
 </head>
@@ -50,9 +64,9 @@
 
 	<div class="overlay container">
 		<h1>Bad choice...</h1>
-		<h4>You found a booby trapped tomb. You get buried alive as a mummy.</h4>
+		<h4>A booby trapped tomb made you fall. You get buried alive as a new mummy.</h4>
 	<div class="btn-container">
-    	<a href="page03.html" class="btn btn-light btn-md">Meet your fate</a>
+    	<a href="page03.html" class="btn btn-danger btn-lg">Meet your fate</a>
 	</div>
 	</div>
 

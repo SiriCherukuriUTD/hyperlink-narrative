@@ -15,14 +15,16 @@
 		margin: 0;
 		padding: 0;
 		height: 100%;
-		color: black;
+		color: white;
+		background-color: #56ace6;
 		}
-		img.background {
+		.background {
 		position: fixed;
+		bottom: 0;
+		left: 0;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: -1;
+		height: auto;
+		max-height: 91vh;
 		}
 		.overlay h1 {
 			font-family: "Georgia", serif; 
@@ -31,16 +33,29 @@
 		.overlay h4 {
 			font-family: "Orbitron", serif;
 		}
-		.overlay .btn-container {
+		.overlay {
+		position: relative;
+		z-index: 1;
+		}
+		.btn-container {
 		font-family: "orbitron", serif;
-		position: absolute;
-		bottom: 35px;
+		position: fixed;
+		bottom: 13px;
 		left: 50%;
 		transform: translateX(-50%);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center; 
 		gap: 50px; 
+		z-index: 2;
+		}
+		.btn-info {
+		box-shadow: 0 0 10px #ffc107;
+		transition: all 0.3s ease;
+		}
+		.btn-info:hover {
+		box-shadow: 0 0 15px #ffc107, 0 0 40px #ffc107;
+		transform: scale(1.08);
 		}
 	</style>
 </head>
@@ -50,10 +65,10 @@
 
 	<div class="overlay container">
 		<h1>You changed the future...</h1>
-		<h4>You built a giant pyramid slide. The Pharoh loved it! Historians now remember this time period as The Silly Slide Era.</h4>
+		<h4>The Pharoh loved your giant pyramid slide. It became monumental and historians now remember this time period as The Silly Slide Era.</h4>
 	<div class="btn-container">
-    	<a href="page02.html" class="btn btn-light btn-md">Use the machine again</a>
-        <a href="page13.html" class="btn btn-light btn-md">Destroy the machine</a>
+    	<a href="page02.html" class="btn btn-info btn-md">This seems wrong. Try the machine again.</a>
+        <a href="page13.html" class="btn btn-info btn-md">I've had enough crazy. Destroy the machine</a>
 	</div>
 	</div>
 
